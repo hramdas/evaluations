@@ -10,12 +10,12 @@ export const Form = ()=>{
     const handleNameChange = (e)=>{
         // setText(e.target.value)
         text.item = e.target.value
-        console.log(text)
+
     }   
     const handleQtChange = (e)=>{
         // setText(e.target.value)
         text.qt = e.target.value
-        console.log(text)
+
     }   
 
     const handleSubmit = (e)=>{
@@ -28,11 +28,14 @@ export const Form = ()=>{
     return (
         <div>
         <form onSubmit={handleSubmit}>
-            <input name='item' type="text" onChange={handleNameChange} placeholder="Enter name of item"></input>
+            <input name='item' type="text" onChange={handleNameChange} placeholder="Enter name of item" required={true}></input>
             <input name='qt' type="number" onChange={handleQtChange} placeholder="Quantity"></input>
 
             <input type="submit"></input>
         </form>
+        <div>
+            {/* <button>Add to list</button> */}
+        </div>
         <div>
             {items.map((a)=>(<p>{a.item}</p>))}
         </div>
