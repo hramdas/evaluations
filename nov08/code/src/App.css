@@ -1,6 +1,27 @@
 .App {
   text-align: center;
 }
+form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+ 
+}
+input{
+  width: 300px;
+  margin-top: 10px;
+  font-size: 20px;
+  border-radius: 8px;
+
+}
+
+input:nth-child(3){
+  background-color: green;
+  color: azure;
+  padding: 3px;
+  width: 100px;
+}
 
 .App-logo {
   height: 40vmin;
