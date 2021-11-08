@@ -26,11 +26,17 @@ export const Form = ()=>{
     }
 
     return (
+        <div>
         <form onSubmit={handleSubmit}>
-        <input name='item' type="text" onChange={handleNameChange} placeholder="Enter name of item"></input>
-        <input name='qt' type="number" onChange={handleQtChange} placeholder="Quantity"></input>
+            <input name='item' type="text" onChange={handleNameChange} placeholder="Enter name of item"></input>
+            <input name='qt' type="number" onChange={handleQtChange} placeholder="Quantity"></input>
 
-        <input type="submit"></input>
+            <input type="submit"></input>
         </form>
+        <div>
+            {items.map((a)=>(<p>{a.item}</p>))}
+        </div>
+        </div>
+        
     )
 }
