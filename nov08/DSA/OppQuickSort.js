@@ -31,7 +31,7 @@ function oppSort(arr, l, n){
         oppSort(arr, index, n)
       }
     }
-    return arr
+    return
 }
 
 function runProgram(input) {
@@ -41,8 +41,13 @@ function runProgram(input) {
 
     // console.log(arr, 0, n-1)
 
-    console.log(oppSort(arr, 0, n-1))
-    // console.log(arr.join(' '))
+  oppSort(arr, 0, n-1)
+
+  // output = []
+  // for(var i=0; i<arr.length; i++){
+
+  // }
+    console.log(arr.join(' '))
    
 }
   
