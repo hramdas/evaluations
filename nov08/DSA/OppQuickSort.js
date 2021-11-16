@@ -3,10 +3,10 @@ function partition(arr, l, n){
   i = l;
   j = n
   while(i<=j){
-    while(arr[i]< pivot){
+    while(arr[i] > pivot){
       i++
     }
-    while(arr[j] > pivot){
+    while(arr[j] < pivot){
       j--
     }
     if(i <= j){
@@ -16,7 +16,9 @@ function partition(arr, l, n){
       i++
       j--
     }
+    console.log(i, arr)
   }
+  
   return i
 }
 

@@ -8,6 +8,7 @@ const jobSchema = new mongoose.Schema({
     type : {type : String, required : true},
     skill : [{type : String, required : true}],
     city : {type : String, required : true},
+    state : {type : String, required : true},
     company : {type : mongoose.Schema.Types.ObjectId, ref :'company', required : true}
 },{
     versionKey : false,
