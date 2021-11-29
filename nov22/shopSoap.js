@@ -1,15 +1,18 @@
 function soaps(arr, p, n, l, h){
-    let mid = Math.floor(l + (h- 1)/2)
+  if(h<l) return 0
 
     if(p > arr[n]) return n+1
+
+    let mid = Math.floor(l + (h- l)/2)
     // console.log('mid', mid)
-    if(arr[mid] < p && arr[mid+1] > p) return mid
-    
-    if(arr[mid] = p) return mid;
 
+    if(arr[mid] > p && arr[mid-1] < p) return mid
+    if(arr[mid] == p) return mid;
 
-    if(arr[mid] > p) return soaps(arr, p, n, mid+1, h)
-    else return soaps(arr, p, n, l, mid-1)
+    if(arr[mid] > p){
+      return soaps(arr, p, n, l, mid-1)
+    } else if(arr[mid] < p) return soaps(arr, p, n, mid+1, h)
+  
 }
 
 function runProgram(input) {
@@ -20,32 +23,26 @@ function runProgram(input) {
     let line = 3;
 
     arr = arr.sort((a,b)=> a-b)
+    // console.log(arr, n+1)
 
     for(var i=0; i<cases; i++){
         let p = +input[line++].trim()
 
         console.log(soaps(arr, p, n, 0, n))
-
-        // var count = 0;
-        // for(var j=0; j<n; j++){
-        //     if(arr[j] < p){
-        //         count ++
-        //     }
-        // }
-        // console.log(count)
     }
-
-   
 }
   
 if (process.env.USERNAME === "hedga") {
-    runProgram(`5
-    1 4 10 5 6
-    4
+    runProgram(`8
+    1 4 10 5 6 12 11 14
+    7
     2
     3
     5
-    11`);
+    11
+    12
+    0
+    14`);
   } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
