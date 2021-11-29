@@ -3,6 +3,12 @@ const connect = require('./config/db')
 const app = express()
 app.use(express.json())
 
+const jobSchema = require('./controllers/job')
+app.use('/job', jobSchema)
+
+const companySchema = require('./controllers/company')
+app.use('/company', companySchema)
+
 
 
 app.listen('2000', async ()=>{
