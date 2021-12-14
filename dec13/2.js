@@ -1,16 +1,16 @@
 function runProgram(input) {
     inp = input.trim().split('\n')
-    var n = +input[0].trim()
+    var n = +inp[0].trim()
 
     for(let i=1; i<=n; i++){
-        str= inp[i].trim()
+        str = inp[i].trim()
 
-        var sum =1;
-        for(let j=0; j<str.length-1; j++){
+        var sum = 0;
+        for(let j=0; j<str.length; j++){
 
-            if(str[j] == str[j+1]){
-
-            } else sum++
+            if(str[j-1] !== str[j]){
+              sum++
+            }
         }
        console.log(sum)
     }
@@ -18,9 +18,17 @@ function runProgram(input) {
 }
   
 if (process.env.USERNAME === "hedga") {
-    runProgram(`2
+    runProgram(`10
     a1
-    abbbaaz`);
+    abbbaaz
+    aabbggccd
+    aadfd
+    adfsg
+    adfsgs
+    asgaaeeggggaabbggccdaabbggccdaabbggccdaabbggccd
+    asgaaeeggggaabbggccdaabbggccdaabbggccdaabbggccd
+    asgaaeeggggaabbggccdaabbggccdaabbggccdaabbggccd
+    asgaaeeggggaabbggccdaabbggccdaabbggccdaabbggccd`);
   } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
