@@ -1,9 +1,17 @@
 function minPossible(arr, cur, n){
-    if(cur<n){
-        var sum = Math.min((arr[cur] - arr[cur+1]), (arr[cur] - arr[cur+2])) + Math.min(minPossible(arr, cur+1, n), minPossible(arr, cur+2, n))
-        console.log(Math.min( Math.abs(arr[cur] - arr[cur+1]), Math.abs(arr[cur] - arr[cur+2])), cur)
+    let dp = new Array(n).fill(Infinity)
+
+    dp[0] = 0;
+
+    for(let i=0; i<n-1; i++){
+      dp[i+1] = Math.min(dp[i] + Math.abs(arr[i+1]-arr[i]), dp[i+1])
+      if(i < n-2){
+      dp[i+2] = Math.min(dp[i] + Math.abs(arr[i+2]-arr[i]), dp[i+2]) 
+      }
+      console.log(i, dp)
     }
-    return sum
+    console.log(dp)
+    return dp[n-1]
 
 }
 

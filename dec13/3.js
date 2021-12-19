@@ -21,9 +21,7 @@ function candidates(arr, n, k){
             r = i+1;
         }
         if(r<=k) sum++
-
     }
-
     return sum
 }
   
