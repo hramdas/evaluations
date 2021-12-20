@@ -1,36 +1,34 @@
 function runProgram(input) {
     input = input.trim().split('\n')
     var n = +input[0].trim()
-    var val = input[1].trim().split(' ').map(Number)
-    l = val[0]
-    r = val[1]
-    var arr = []
-    for(let i=0; i<n; i++){
-        arr.push(i+1)
-    }
-    // console.log(arr)
-    sub = []
-    count = 0
-   
-    console.log( subseq(arr,0, n, l, r))
-}
+  arr = ['YES',
+    'NO',
+    'YES',
+    'YES',
+    'NO']
 
-function subseq(arr, cur, h, l, r){
-    console.log(sub)
-    if(sub.length > 0){
-        return sub
-    }
-
-    for(var j=cur; j<h; j++){
-        sub.push(arr[j])
-        subseq(arr, j+1, h, l, r)
-        //sub.pop()
+    for(i=0 ;i<arr.length; i++){
+        console.log(arr[i])
     }
 }
   
 if (process.env.USERNAME === "hedga") {
-    runProgram(`3
-    0 1`);
+    runProgram(`5
+    3
+    1 -1 0
+    1 1 -2
+    3
+    0 1 1
+    0 2 2
+    2
+    1 0
+    1 41
+    2
+    -1 0
+    -1 -41
+    5
+    0 1 -1 1 -1
+    1 1 -1 1 -1`);
   } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

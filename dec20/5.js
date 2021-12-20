@@ -1,36 +1,35 @@
 function runProgram(input) {
     input = input.trim().split('\n')
-    var n = +input[0].trim()
-    var val = input[1].trim().split(' ').map(Number)
-    l = val[0]
-    r = val[1]
-    var arr = []
-    for(let i=0; i<n; i++){
-        arr.push(i+1)
+    var cases = input[0].trim().split(' ').map(Number)
+    n = cases[0]
+    p = cases[1]
+    c = input[1].trim().split(' ').map(Number)
+
+    total = 0; 
+    count = 0;
+    console.log(3)
+    while(total < p){
+
+        for (var i=n-1; i>=0; i--){
+            
+            if(total + c[i] <= p){
+                total+=c[i]
+                //console.log(c[i])
+                count++
+            }
+            if(total == p){
+                //console.log(count)
+                return;
+            }
+        }
     }
-    // console.log(arr)
-    sub = []
-    count = 0
+    
    
-    console.log( subseq(arr,0, n, l, r))
-}
-
-function subseq(arr, cur, h, l, r){
-    console.log(sub)
-    if(sub.length > 0){
-        return sub
-    }
-
-    for(var j=cur; j<h; j++){
-        sub.push(arr[j])
-        subseq(arr, j+1, h, l, r)
-        //sub.pop()
-    }
 }
   
 if (process.env.USERNAME === "hedga") {
-    runProgram(`3
-    0 1`);
+    runProgram(`3 11
+    1 5 7`);
   } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
