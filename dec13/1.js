@@ -8,7 +8,7 @@ function minPossible(arr, cur, n){
       if(i < n-2){
       dp[i+2] = Math.min(dp[i] + Math.abs(arr[i+2]-arr[i]), dp[i+2]) 
       }
-      console.log(i, dp)
+      console.log('c' ,i, dp)
     }
     console.log(dp)
     return dp[n-1]
