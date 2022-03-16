@@ -8,7 +8,6 @@ function runProgram(input) {
 
         console.log(robbery(arr, n))
     }
-   
 }
 
 function robbery(arr, n){

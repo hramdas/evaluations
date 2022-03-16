@@ -9,14 +9,16 @@ function runProgram(input) {
     var col = []
 
     for(let i=0 ;i< mid-1; i++){
+      // console.log('pre', arr[i])
        col.push(arr[i+1] - arr[i])
     }
     
-    col.push(arr[arr.length-1] - arr[mid])
+    col.push(arr[arr.length-1] - arr[mid-1])
     col.push(arr[mid] - arr[0])
 
     for(let i=mid ;i< arr.length-1; i++){
-        col.push(arr[i+1] - arr[mid-1])
+      // console.log('ar', arr[i])
+        col.push(arr[i+1] - arr[i])
      }
 
      col.sort((a,b)=>a-b)
@@ -27,8 +29,8 @@ function runProgram(input) {
 }
   
 if (process.env.USERNAME === "hedga") {
-    runProgram(`6
-    5 9 6 8 7 4`);
+    runProgram(`5
+    5 9 6 8 4`);
   } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

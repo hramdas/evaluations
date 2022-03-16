@@ -2,8 +2,8 @@ function minPossible(arr, cur, n){
     let dp = new Array(n).fill(Infinity)
 
     dp[0] = 0;
-
     for(let i=0; i<n-1; i++){
+      console.log('b', i, dp)
       dp[i+1] = Math.min(dp[i] + Math.abs(arr[i+1]-arr[i]), dp[i+1])
       if(i < n-2){
       dp[i+2] = Math.min(dp[i] + Math.abs(arr[i+2]-arr[i]), dp[i+2]) 
@@ -12,7 +12,6 @@ function minPossible(arr, cur, n){
     }
     console.log(dp)
     return dp[n-1]
-
 }
 
 function runProgram(input) {
